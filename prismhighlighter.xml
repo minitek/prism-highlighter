@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="system" method="upgrade">
+	<name>plg_system_prismhighlighter</name>
+	<author>Minitek.gr</author>
+	<creationDate>January 2023</creationDate>
+	<copyright>Copyright (C) 2011 - 2023 Minitek.gr. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later</license>
+	<authorUrl>https://www.minitek.gr</authorUrl>
+	<version>4.0.1</version>
+	<description>A lightweight syntax highlighter for Joomla.</description>
+
+	<media destination="plg_system_prismhighlighter" folder="media">
+		<folder>css</folder>
+		<folder>js</folder>
+		<filename>index.html</filename>
+	</media>
+
+	<files>
+		<filename plugin="prismhighlighter">prismhighlighter.php</filename>
+		<filename>index.html</filename>
+	</files>
+
+	<languages>
+		<language tag="en-GB">plg_system_prismhighlighter.ini</language>
+		<language tag="en-GB">plg_system_prismhighlighter.sys.ini</language>
+	</languages>
+
+	<updateservers>
+  		<server type="extension" priority="1" name="System - Prism Highlighter"><![CDATA[https://update.minitek.gr/joomla-extensions/plg_system_prismhighlighter.xml]]></server>
+  	</updateservers>
+
+	<config>
+
+		<fields name="params">
+
+			<fieldset
+				name="basic"
+				class="options-grid-form options-grid-form-full">
+
+				<field
+					name="source"
+					type="list"
+					default="local"
+					label="PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_FILES_SOURCE_LABEL"
+					description="PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_FILES_SOURCE_DESC"
+				>
+					<option value="local">PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_OPTION_LOCAL</option>
+					<option value="cdnjs">PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_OPTION_CDNJS</option>
+					<option value="jsdelivr">PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_OPTION_JSDELIVR</option>
+				</field>
+
+				<field
+					name="theme"
+					type="list"
+					default="prism.min.css"
+					label="PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_THEME_LABEL"
+					description="PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_THEME_DESC"
+				>
+					<option value="prism.min.css">PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_OPTION_DEFAULT</option>
+					<option value="prism-dark.min.css">PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_OPTION_DARK</option>
+					<option value="prism-funky.min.css">PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_OPTION_FUNKY</option>
+					<option value="prism-okaidia.min.css">PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_OPTION_OKAIDIA</option>
+					<option value="prism-twilight.min.css">PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_OPTION_TWILIGHT</option>
+					<option value="prism-coy.min.css">PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_OPTION_COY</option>
+					<option value="prism-solarizedlight.min.css">PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_OPTION_SOLARIZED_LIGHT</option>
+					<option value="prism-tomorrow.min.css">PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_OPTION_TOMORROW_NIGHT</option>
+				</field>
+
+				<field
+					name="unescaped_markup"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_UNESCAPED_MARKUP_LABEL"
+					description="PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_UNESCAPED_MARKUP_DESC"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="normalize_whitespace"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_NORMALIZE_WHITESPACE_LABEL"
+					description="PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_NORMALIZE_WHITESPACE_DESC"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="line_numbers"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					label="PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_LINE_NUMBERS_LABEL"
+					description="PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_LINE_NUMBERS_DESC"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="show_language"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					label="PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_SHOW_LANGUAGE_LABEL"
+					description="PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_SHOW_LANGUAGE_DESC"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="copy_to_clipboard"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					label="PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_COPY_TO_CLIPBOARD_LABEL"
+					description="PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_COPY_TO_CLIPBOARD_DESC"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="download_button"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					label="PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_DOWNLOAD_BUTTON_LABEL"
+					description="PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_DOWNLOAD_BUTTON_DESC"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="file_highlight"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					label="PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_FILE_HIGHLIGHT_LABEL"
+					description="PLG_SYSTEM_PRISMHIGHLIGHTER_CONFIG_FILE_HIGHLIGHT_DESC"
+					showon="source:local"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+			</fieldset>
+
+		</fields>
+
+	</config>
+
+</extension>
